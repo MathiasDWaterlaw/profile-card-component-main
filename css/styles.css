@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root{
+    --cyan: hsl(185, 75%, 39%);
+    --dark-blue: hsl(229, 23%, 23%);
+    --grey-blue: hsl(227, 10%, 46%);
+    --dark-grey: hsla(0, 0%, 59%, 50%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* __Starts the styling__ */
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+    position: relative;
+    background-color: var(--cyan);
+    gap: 1rem;
+    background-image: url(../images/bg-pattern-top.svg), url(../images/bg-pattern-bottom.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed;
+    background-size: 60vw, 60vw;
+    background-position: left -150px top -400px, right -150px bottom -460px;
+}
+
+
+@media (600px < width < 1060px) {
+    body{
+        background-size: 650px,650px;
+    }
+}
+
+
+@media (400px < width < 600px) {
+    body{
+        background-size: 550px, 600px;
+    }
+}
+
+
+@media (max-width: 400px) {
+    body{
+        background-size: 150vw,150vw;
+        background-position: left -360px top -300px, right -350px bottom -250px;
+    }
+}
+
+#card{
+    z-index: 1;
+    background-color: white;
+    min-width: 330px;
+    text-align: center;
+    font-family: Kumbh Sans;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+h3{
+    color: var(--dark-blue);
+    font-size: 18px;
+}
+
+h3 span{
+    padding-inline: 5px;
+}
+
+p,span{
+    color: var(--grey-blue);
+    font-weight: 400;
+}
+
+.card-header{
+    height: 135px;
+    border-radius: 15px 15px 0 0;
+    background-image: url(../images/bg-pattern-card.svg);
+}
+
+.card-info{
+    height: 150px;
+    border-bottom: 1px solid var(--dark-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description{
+    margin-top: 4rem;
+    line-height: 2.5rem;
+}
+
+.description p{
+    font-size: 15px;
+}
+
+.profile-pic{
+    border: 5px solid white;
+    border-radius: 50%;
+    position: absolute;
+    left: 35%;
+    bottom: 50%;
+}
+
+.card-footer{
+    display: flex;
+    justify-content: space-evenly;
+    height: 90px;
+    align-items: center;
+    padding: 1.5rem;
+    line-height: 1.8rem;
+}
+.social-info{
+    margin-top: 10px;
+    width: 80px;
+}
+.card-footer p{
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
